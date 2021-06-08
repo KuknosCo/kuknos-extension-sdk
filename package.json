@@ -1,0 +1,21 @@
+{
+  "name": "kuknos-browser-intent-sdk",
+  "version": "0.0.1",
+  "description": "",
+  "main": "./dist/kuknos-browser-intent-sdk.min.js",
+  "types": "./dist/kuknos-browser-intent-sdk.d.ts",
+  "scripts": {
+    "dev": "tsc -m es6 --outDir dist",
+    "dev:watch": "nodemon --exec 'npm run dev || exit 1'",
+    "build": "npm run dev && uglifyjs ./dist/kuknos-browser-intent-sdk.js -o ./dist/kuknos-browser-intent-sdk.min.js",
+    "clean": "rm -rf dist",
+    "demo:test": "npm run build && cd demo && npm install && npm run add-self && npm test"
+  },
+  "author": "Matin Rezakhani <matin.rezakhani@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^1.17.5",
+    "typescript": "^2.9.2",
+    "uglify-js": "^3.4.9"
+  }
+}
