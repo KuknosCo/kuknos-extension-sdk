@@ -1,10 +1,10 @@
 import React from 'react';
-import { getAccountPublicKey } from 'kuknos-browser-intent-sdk'
+import { getAccountPublicKey , getAccountBalances } from 'kuknos-browser-intent-sdk'
 
 function App() {
 
   const test = async ()=>{
-    getAccountPublicKey()
+    getAccountBalances()
     .then((result) => {
       console.log(result);
       

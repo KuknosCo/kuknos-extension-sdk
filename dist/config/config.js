@@ -1,4 +1,5 @@
-export var baseUrl = "https://browser-extension.kuknos.ir";
+//export const baseUrl: string = "https://browser-extension.kuknos.ir";
+export var baseUrl = "http://localhost:3002";
 export var windowConfig = {
     width: 416,
     height: 600,

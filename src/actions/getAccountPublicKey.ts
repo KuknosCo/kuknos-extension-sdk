@@ -4,7 +4,7 @@ import { IGetAccountPublicKey, IIntentResponse, IntentResponseStatus } from "../
 export function getAccountPublicKey():Promise<IGetAccountPublicKey>{
     return new Promise((resolve , reject)=>{
         let confirmWin:any = window.open(
-            `${baseUrl}/confirm?type=getPublicKey`,
+            `${baseUrl}/intent/account-publickey`,
             "myWindow",
             `width=${windowConfig.width},height=${windowConfig.height},top=${windowConfig.top},left=${windowConfig.left},scrollbars=no`
         );
