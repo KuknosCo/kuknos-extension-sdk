@@ -9,7 +9,7 @@
     "dev:watch": "nodemon --exec 'npm run dev || exit 1'",
     "build": "npm run dev && uglifyjs ./dist/kuknos-browser-intent-sdk.js -o ./dist/kuknos-browser-intent-sdk.min.js",
     "clean": "rm -rf dist",
-    "demo:test": "cd demo && npm start"
+    "demo": "cd demo && npm start"
   },
   "author": "Matin Rezakhani <matin.rezakhani@gmail.com>",
   "license": "MIT",
@@ -17,5 +17,8 @@
     "nodemon": "^1.17.5",
     "typescript": "^2.9.2",
     "uglify-js": "^3.4.9"
+  },
+  "dependencies": {
+    "js-kuknos-sdk": "0.0.9"
   }
 }

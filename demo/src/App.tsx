@@ -1,10 +1,10 @@
 import React from 'react';
-import { getAccountPublicKey , getAccountBalances, createAccount } from 'kuknos-browser-intent-sdk'
+import { changeTrust } from 'kuknos-browser-intent-sdk'
 
 function App() {
 
   const test = async ()=>{
-    createAccount('09201334767')
+    changeTrust('MOBILE10' , "add")
     .then((result) => {
       console.log(result);
       

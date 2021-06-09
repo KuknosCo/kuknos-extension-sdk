@@ -9,10 +9,10 @@ export declare enum IntentResponseStatus {
     submit = "submit",
     reject = "reject"
 }
-export interface IAccountPublicKey {
+export interface IAccountPublicKeyResponse {
     public: string;
 }
-export interface IAccountBalances {
+export interface IAccountBalancesResponse {
     public: string;
     balances: IBalance[];
 }
@@ -25,7 +25,11 @@ export interface IBalance {
     selling_liabilities: string;
     limit: string;
 }
-export interface ICreateAccount {
+export interface ICreateAccountResponse {
+    public: string;
+    signature: string;
+}
+export interface IChangeTrustResponse {
     public: string;
     signature: string;
 }

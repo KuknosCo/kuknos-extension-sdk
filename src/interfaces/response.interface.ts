@@ -11,11 +11,11 @@ export enum IntentResponseStatus{
     reject = "reject"
 }
 
-export interface IAccountPublicKey{
+export interface IAccountPublicKeyResponse{
     public: string
 }
 
-export interface IAccountBalances{
+export interface IAccountBalancesResponse{
     public: string
     balances : IBalance[]
 }
@@ -29,7 +29,13 @@ export interface IBalance{
     limit: string
 }
 
-export interface ICreateAccount{
+export interface ICreateAccountResponse{
     public: string
     signature: string
 }
+
+export interface IChangeTrustResponse{
+    public: string
+    signature: string
+}
+

@@ -1,2 +1,2 @@
-import { IAccountBalances } from "../interfaces/response.interface";
-export declare function getAccountBalances(): Promise<IAccountBalances>;
+import { IAccountBalancesResponse } from "../interfaces/response.interface";
+export declare function getAccountBalances(): Promise<IAccountBalancesResponse>;

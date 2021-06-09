@@ -1,10 +1,10 @@
 import { baseUrl, windowConfig } from "../config/config";
-import { ICreateAccount, IIntentResponse, IntentResponseStatus } from "../interfaces/response.interface";
+import { ICreateAccountResponse, IIntentResponse, IntentResponseStatus } from "../interfaces/response.interface";
 
-export function createAccount(identifier:string):Promise<ICreateAccount>{
+export function createAccount(identifier:string):Promise<ICreateAccountResponse>{
     return new Promise((resolve , reject)=>{
         if(!identifier){
-            reject('Identifier most not be empty')
+            reject('Identifier must not be empty')
             return
         }
         let confirmWin:any = window.open(

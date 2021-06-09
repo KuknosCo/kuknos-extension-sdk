@@ -1,7 +1,7 @@
 import { baseUrl, windowConfig } from "../config/config";
-import {  IAccountBalances, IIntentResponse, IntentResponseStatus } from "../interfaces/response.interface";
+import {  IAccountBalancesResponse, IIntentResponse, IntentResponseStatus } from "../interfaces/response.interface";
 
-export function getAccountBalances():Promise<IAccountBalances>{
+export function getAccountBalances():Promise<IAccountBalancesResponse>{
     return new Promise((resolve , reject)=>{
         let confirmWin:any = window.open(
             `${baseUrl}/intent/account-balance`,

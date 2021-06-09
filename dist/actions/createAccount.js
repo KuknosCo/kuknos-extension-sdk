@@ -3,7 +3,7 @@ import { IntentResponseStatus } from "../interfaces/response.interface";
 export function createAccount(identifier) {
     return new Promise(function (resolve, reject) {
         if (!identifier) {
-            reject('Identifier most not be empty');
+            reject('Identifier must not be empty');
             return;
         }
         var confirmWin = window.open(baseUrl + "/intent/create-account?identifier=" + identifier, "myWindow", "width=" + windowConfig.width + ",height=" + windowConfig.height + ",top=" + windowConfig.top + ",left=" + windowConfig.left + ",scrollbars=no");

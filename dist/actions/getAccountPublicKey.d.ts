@@ -1,2 +1,2 @@
-import { IAccountPublicKey } from "../interfaces/response.interface";
-export declare function getAccountPublicKey(): Promise<IAccountPublicKey>;
+import { IAccountPublicKeyResponse } from "../interfaces/response.interface";
+export declare function getAccountPublicKey(): Promise<IAccountPublicKeyResponse>;
