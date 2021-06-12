@@ -71,7 +71,7 @@
   ],
   "compilation": {
     "compiler": {
-      "context": "./src/index.ts",
+      "context": "./src/kuknos-browser-intent-sdk.ts",
       "outputPath": "./dist"
     }
   }

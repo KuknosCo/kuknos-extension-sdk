@@ -1,10 +1,19 @@
 import React from 'react';
-import { changeTrust } from 'kuknos-browser-intent-sdk'
+import { changeTrust , curveEncrypt } from 'kuknos-browser-intent-sdk'
 
-function App() {
+function App() { 
 
   const test = async ()=>{
-    changeTrust('MOBILE10' , "add")
+    /* changeTrust('MOBILE10' , "add")
+    .then((result) => {
+      console.log(result);
+      
+    }).catch((err) => {
+      console.log(err);
+      
+    }); */
+
+    curveEncrypt("{test: 'matin'}" , 'GDBJKTLROLNYFEZA64STTG3JHM5W5IKGXU7NIG4CPDG2F3BFK25HGS6B')
     .then((result) => {
       console.log(result);
       
