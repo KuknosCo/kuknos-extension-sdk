@@ -1,5 +1,5 @@
 import React from 'react';
-import {signData} from 'kuknos-browser-intent-sdk'
+import {recoverExtenstionAccount} from 'kuknos-browser-intent-sdk'
 
 function App() { 
 
@@ -13,7 +13,7 @@ function App() {
       
     }); */
 
-    signData('matin')
+    recoverExtenstionAccount('matin')
     .then((result) => {
       console.log(result);
       

@@ -55,5 +55,11 @@ export interface ISignXdrResponse{
 
 export interface ISignDataResponse{
     public: string
-    data: string
+    signature: string
+}
+
+
+export interface IRecoverAccountResponse{
+    public: string
+    signature: string
 }

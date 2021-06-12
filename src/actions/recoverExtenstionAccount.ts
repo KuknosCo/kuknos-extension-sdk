@@ -1,18 +1,18 @@
 import { baseUrl, windowConfig } from "../config/config";
 import {
-	IRecoverAccountResponse,
+	ISignDataResponse,
 	IIntentResponse,
 	IntentResponseStatus,
 } from "../interfaces/response.interface";
 
-export async function signData(data: string): Promise<IRecoverAccountResponse> {
+export async function recoverExtenstionAccount(identifier: string): Promise<ISignDataResponse> {
 	return new Promise((resolve, reject) => {
-		if (!data) {
-			reject("data should not be empty");
+		if (!identifier) {
+			reject("identifier should not be empty");
 			return;
 		}
 		let confirmWin: any = window.open(
-			`${baseUrl}/intent/sign-data?data=${encodeURIComponent(data)}`,
+			`${baseUrl}/intent/recover-extension-account?identifier=${encodeURIComponent(identifier)}`,
 			"myWindow",
 			`width=${windowConfig.width},height=${windowConfig.height},top=${windowConfig.top},left=${windowConfig.left},scrollbars=no`
 		);
