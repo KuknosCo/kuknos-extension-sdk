@@ -4,11 +4,11 @@ import { ICreateAccountResponse, IIntentResponse, IntentResponseStatus } from ".
 export function createAccount(identifier:string):Promise<ICreateAccountResponse>{
     return new Promise((resolve , reject)=>{
         if(!identifier){
-            reject('Identifier must not be empty')
+            reject('Identifier should not be empty')
             return
         }
         let confirmWin:any = window.open(
-            `${baseUrl}/intent/create-account?identifier=${identifier}`,
+            `${baseUrl}/intent/create-account?identifier=${encodeURIComponent(identifier)}`,
             "myWindow",
             `width=${windowConfig.width},height=${windowConfig.height},top=${windowConfig.top},left=${windowConfig.left},scrollbars=no`
         );

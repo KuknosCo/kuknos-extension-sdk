@@ -5,7 +5,7 @@ export function changeTrust(asset_code: string, type:'add'|'remove' ):Promise<IC
     return new Promise((resolve , reject)=>{
 
         if(!asset_code){
-            reject('Asset code must not be empty');
+            reject('Asset code should not be empty');
             return;
         }
 

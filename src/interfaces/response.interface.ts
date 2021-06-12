@@ -39,3 +39,12 @@ export interface IChangeTrustResponse{
     signature: string
 }
 
+export interface ICurveEncryptResponse{
+    ciphertext : string
+}
+
+export interface ICurveDecryptResponse{
+    public: string
+    data: string
+}
+

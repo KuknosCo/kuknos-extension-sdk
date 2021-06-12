@@ -1,8 +1,9 @@
 import * as kuknusSdk from "js-kuknos-sdk";
 import e2c from "ed2curve";
 import sodium_api from "libsodium-wrappers";
+import { ICurveEncryptResponse } from "../interfaces/response.interface";
 
-export async function curveEncrypt(data: string, publicKey: string) {
+export async function curveEncrypt(data: string, publicKey: string):Promise<ICurveEncryptResponse> {
 	return new Promise(async (resolve, reject) => {
 		try {
 			let pub: any = publicKey;
@@ -18,7 +19,9 @@ export async function curveEncrypt(data: string, publicKey: string) {
 				}, "")
 			);
 
-			resolve(base64String);
+			resolve({
+				ciphertext: base64String
+			});
 		} catch (error) {
 			reject(error);
 		}
