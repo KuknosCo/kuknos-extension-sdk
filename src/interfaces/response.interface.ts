@@ -48,3 +48,8 @@ export interface ICurveDecryptResponse{
     data: string
 }
 
+export interface ISignXdrResponse{
+    public: string
+    xdr: string
+}
+

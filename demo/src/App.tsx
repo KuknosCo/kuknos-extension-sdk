@@ -1,5 +1,5 @@
 import React from 'react';
-import { changeTrust , curveDecrypt, curveEncrypt } from 'kuknos-browser-intent-sdk'
+import {signXdr} from 'kuknos-browser-intent-sdk'
 
 function App() { 
 
@@ -13,16 +13,7 @@ function App() {
       
     }); */
 
-   /*  curveEncrypt("{test: 'matin'}" , 'GDKXBS372NZXAOPJIVF3ODCCHKAALOFRMUPXD7FXGY2VXVEXXJF37QYQ')
-    .then((result) => {
-      console.log(result);
-      
-    }).catch((err) => {
-      console.log(err);
-      
-    }); */
-
-    curveDecrypt("JZ9ni3cAOHJ+YfANYtokSEkyF1IZyrygKRPFQ49SoTZnCN6gjCkk1cRSlseoqLiqn2p49GGRea6F/5e7wpxzo6k=")
+    signXdr("AAAAABihbCMM8LJW339f3Nf2gRfjT5YOmaS//ql4aNPtWqfQAADDUAB9ezsAAAABAAAAAAAAAAAAAAABAAAAAAAAAAEAAAAAt2jqyjHDBPQxR3Aox8md4urbbwvEokxdBiCdixoTJlUAAAAAAAAAAACYloAAAAAAAAAAAA==")
     .then((result) => {
       console.log(result);
       
@@ -30,7 +21,8 @@ function App() {
       console.log(err);
       
     });
-      
+
+   
   }
 
   return (
