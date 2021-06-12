@@ -1,5 +1,5 @@
 import React from 'react';
-import {signXdr} from 'kuknos-browser-intent-sdk'
+import {signData} from 'kuknos-browser-intent-sdk'
 
 function App() { 
 
@@ -13,7 +13,7 @@ function App() {
       
     }); */
 
-    signXdr("AAAAABihbCMM8LJW339f3Nf2gRfjT5YOmaS//ql4aNPtWqfQAADDUAB9ezsAAAABAAAAAAAAAAAAAAABAAAAAAAAAAEAAAAAt2jqyjHDBPQxR3Aox8md4urbbwvEokxdBiCdixoTJlUAAAAAAAAAAACYloAAAAAAAAAAAA==")
+    signData('matin')
     .then((result) => {
       console.log(result);
       

@@ -53,3 +53,7 @@ export interface ISignXdrResponse{
     xdr: string
 }
 
+export interface ISignDataResponse{
+    public: string
+    data: string
+}
