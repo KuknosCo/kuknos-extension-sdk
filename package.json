@@ -22,6 +22,8 @@
     "uglify-js": "^3.4.9"
   },
   "dependencies": {
+    "@types/axios": "^0.14.0",
+    "axios": "^0.21.1",
     "ed2curve": "^0.3.0",
     "js-kuknos-sdk": "0.0.9",
     "libsodium-wrappers": "^0.7.9"

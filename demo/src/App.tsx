@@ -1,5 +1,5 @@
 import React from 'react';
-import {recoverExtenstionAccount} from 'kuknos-browser-intent-sdk'
+import {getAccountBalances} from 'kuknos-browser-intent-sdk'
 
 function App() { 
 
@@ -13,7 +13,7 @@ function App() {
       
     }); */
 
-    recoverExtenstionAccount('matin')
+    getAccountBalances()
     .then((result) => {
       console.log(result);
       
