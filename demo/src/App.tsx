@@ -1,19 +1,10 @@
 import React from 'react';
-import {getAccountBalances} from 'kuknos-browser-intent-sdk'
+import {getAccountBalances, getAccountSetting} from 'kuknos-browser-intent-sdk'
 
 function App() { 
 
   const test = async ()=>{
-    /* changeTrust('MOBILE10' , "add")
-    .then((result) => {
-      console.log(result);
-      
-    }).catch((err) => {
-      console.log(err);
-      
-    }); */
-
-    getAccountBalances()
+    getAccountSetting("GDKXBS372NZXAOPJIVF3ODCCHKAALOFRMUPXD7FXGY2VXVEXXJF37QYQ")
     .then((result) => {
       console.log(result);
       
