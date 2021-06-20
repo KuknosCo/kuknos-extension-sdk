@@ -1,16 +1,16 @@
 import { baseUrl, windowConfig } from "../config/config";
 import {  IPaymentResponse, IIntentResponse, IntentResponseStatus } from "../interfaces/response.interface";
 
-export function payment(amount: number , asset_code: string, asset_issuer?: string  ):Promise<IPaymentResponse>{
+export function payment(amount: number , destination: string , asset_code: string, asset_issuer?: string):Promise<IPaymentResponse>{
     return new Promise((resolve , reject)=>{
 
-        if(!asset_code){
-            reject('Asset code and amount should not be empty');
+        if(!asset_code || !amount || !destination){
+            reject('Amount and destination and asset code should not be empty');
             return;
         }
 
         let confirmWin:any = window.open(
-            `${baseUrl}/intent/payment?asset_code=${asset_code}&amount=${amount}&asset_issuer=${asset_issuer}`,
+            `${baseUrl}/intent/payment?asset_code=${asset_code}&amount=${amount}&asset_issuer=${asset_issuer}&destination=${destination}`,
             "myWindow",
             `width=${windowConfig.width},height=${windowConfig.height},top=${windowConfig.top},left=${windowConfig.left},scrollbars=no`
         );

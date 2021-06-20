@@ -11,15 +11,14 @@ function App() {
       userAgent: navigator.userAgent
     })));
      */
-    //changeTrust('remove' , 'ABPARS' , "GAKARA32VNSMKCSPMDNQXCOMZSDSBRZCQCAJKDH4A4CLCGOIVL7UNZWS" , 10)
-    changeTrust('add' , 'ABPARS' , "GAKARA32VNSMKCSPMDNQXCOMZSDSBRZCQCAJKDH4A4CLCGOIVL7UNZWS" , 10)
+   /*  payment("")
     .then((result) => {
       console.log(result);
       
     }).catch((err) => {
       console.log(err);
       
-    });
+    }); */
 
   }
 
