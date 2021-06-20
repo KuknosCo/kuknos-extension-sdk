@@ -1,4 +1,4 @@
-import { baseUrl, windowConfig } from "../config/config";
+import { baseUrl, network, windowConfig } from "../config/config";
 import {
 	IAccountBalancesResponse,
 	IIntentResponse,
@@ -16,7 +16,7 @@ export function getAccountBalances(
             return
         }
 		try {
-			let account = await new KuknosSdk.Server(horizon.live)
+			let account = await new KuknosSdk.Server(horizon)
 				.accounts()
 				.accountId(publicKey)
 				.call()
@@ -44,6 +44,7 @@ export function getAccountBalances(
 			resolve({
 				public: publicKey,
 				balances: balances,
+				network: network
 			});
 		} catch (error) {
 			reject(error);

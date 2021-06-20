@@ -15,10 +15,12 @@ export enum IntentResponseStatus {
 
 export interface IAccountPublicKeyResponse {
 	public: string;
+	network: string;
 }
 
 export interface IAccountBalancesResponse {
 	public: string;
+	network: string;
 	balances: IBalance[];
 }
 export interface IBalance {
@@ -39,12 +41,14 @@ export interface ICreateAccountResponse {
 export interface IChangeTrustResponse {
 	public: string;
 	status: string;
+	network: string;
 }
 
 export interface IPaymentResponse {
 	public: string;
 	status: string;
 	transaction_hash: string;
+	network: string;
 }
 
 export interface ICurveEncryptResponse {
@@ -59,6 +63,7 @@ export interface ICurveDecryptResponse {
 export interface ISignXdrResponse {
 	public: string;
 	xdr: string;
+	network: string;
 }
 
 export interface ISignDataResponse {
@@ -73,6 +78,7 @@ export interface IRecoverAccountResponse {
 
 export interface IAccountSettingResponse {
 	public: string;
+	network: string;
 	setting: {
 		thresholds: Horizon.AccountThresholds;
 		flags: Horizon.Flags;

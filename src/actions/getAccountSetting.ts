@@ -1,6 +1,6 @@
 import { IAccountSettingResponse } from "../interfaces/response.interface";
 import * as KuknosSdk from "js-kuknos-sdk";
-import { horizon } from "./../config/config";
+import { horizon, network } from "./../config/config";
 
 export function getAccountSetting(
 	publicKey: string
@@ -11,7 +11,7 @@ export function getAccountSetting(
 			return;
 		}
 		try {
-			let account = await new KuknosSdk.Server(horizon.live)
+			let account = await new KuknosSdk.Server(horizon)
 				.accounts()
 				.accountId(publicKey)
 				.call()
@@ -19,6 +19,7 @@ export function getAccountSetting(
 
 			resolve({
 				public: publicKey,
+				network: network,
 				setting: {
 					thresholds: account.thresholds,
 					flags: account.flags,

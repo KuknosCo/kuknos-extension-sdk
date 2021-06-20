@@ -1,10 +1,10 @@
-import { baseUrl, windowConfig } from "../config/config";
+import { baseUrl, network, windowConfig } from "../config/config";
 import { IAccountPublicKeyResponse, IIntentResponse, IntentResponseStatus } from "../interfaces/response.interface";
 
 export function getAccountPublicKey():Promise<IAccountPublicKeyResponse>{
     return new Promise((resolve , reject)=>{
         let confirmWin:any = window.open(
-            `${baseUrl}/intent/account-publickey`,
+            `${baseUrl}/intent/account-publickey?network=${network}`,
             "myWindow",
             `width=${windowConfig.width},height=${windowConfig.height},top=${windowConfig.top},left=${windowConfig.left},scrollbars=no`
         );

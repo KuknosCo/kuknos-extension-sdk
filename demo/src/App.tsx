@@ -1,8 +1,8 @@
-import React from 'react';
-import {changeTrust , payment} from 'kuknos-browser-intent-sdk'
+import React , {useState , useEffect} from 'react';
+import KuknosIntent from 'kuknos-browser-intent-sdk'
 function App() { 
 
-  const test = async ()=>{
+  const submit = async ()=>{
     
     /* console.log(btoa(JSON.stringify({
       data : 'matin',
@@ -11,20 +11,34 @@ function App() {
       userAgent: navigator.userAgent
     })));
      */
-   /*  payment("")
+
+   
+
+
+    KuknosIntent.getAccountPublicKey()
     .then((result) => {
       console.log(result);
       
     }).catch((err) => {
       console.log(err);
       
-    }); */
+    });
 
   }
 
+/*   const [test , setTest] = useState('http://localhost:3000');
+  useEffect(()=>{
+    KuknosIntent.setExtensionUrl(test)
+    KuknosIntent.setNetwork('test')
+  },[test])
+ */
+
+  
   return (
-    <div className="App" onClick={()=>{test()}}> 
-      kuknos browser intent sdk
+    <div className="App"> 
+      <button onClick={()=>{submit()}}>kuknos browser intent sdk</button>
+      <button onClick={()=>{KuknosIntent.setNetwork('test')}}>test</button>
+      <button onClick={()=>{KuknosIntent.setNetwork('public')}}>public</button>
     </div>
   );
 }

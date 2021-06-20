@@ -1,4 +1,4 @@
-import { baseUrl, windowConfig } from "../config/config";
+import { baseUrl, network, windowConfig } from "../config/config";
 import {  IPaymentResponse, IIntentResponse, IntentResponseStatus } from "../interfaces/response.interface";
 
 export function payment(amount: number , destination: string , asset_code: string, asset_issuer?: string):Promise<IPaymentResponse>{
@@ -10,13 +10,16 @@ export function payment(amount: number , destination: string , asset_code: strin
         }
 
         let confirmWin:any = window.open(
-            `${baseUrl}/intent/payment?asset_code=${asset_code}&amount=${amount}&asset_issuer=${asset_issuer}&destination=${destination}`,
+            `${baseUrl}/intent/payment?asset_code=${asset_code}&amount=${amount}&asset_issuer=${asset_issuer}&destination=${destination}&network=${network}`,
             "myWindow",
             `width=${windowConfig.width},height=${windowConfig.height},top=${windowConfig.top},left=${windowConfig.left},scrollbars=no`
         );
         const handleResponse = (response:IIntentResponse) => {            
             if (response.data.status === IntentResponseStatus.submit) {
-                resolve(response.data.data)
+                resolve({
+                    ...response.data.data,
+                    network: network
+                })
                 window.removeEventListener("message", handleResponse);
                 confirmWin.close();
             }

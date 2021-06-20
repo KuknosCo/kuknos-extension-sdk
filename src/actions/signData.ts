@@ -1,4 +1,4 @@
-import { baseUrl, windowConfig } from "../config/config";
+import { baseUrl, network, windowConfig } from "../config/config";
 import {
 	IRecoverAccountResponse,
 	IIntentResponse,
@@ -12,7 +12,7 @@ export async function signData(data: string): Promise<IRecoverAccountResponse> {
 			return;
 		}
 		let confirmWin: any = window.open(
-			`${baseUrl}/intent/sign-data?data=${encodeURIComponent(data)}`,
+			`${baseUrl}/intent/sign-data?data=${encodeURIComponent(data)}&network=${network}`,
 			"myWindow",
 			`width=${windowConfig.width},height=${windowConfig.height},top=${windowConfig.top},left=${windowConfig.left},scrollbars=no`
 		);

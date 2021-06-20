@@ -1,4 +1,4 @@
-import { baseUrl, windowConfig } from "../config/config";
+import { baseUrl, network, windowConfig } from "../config/config";
 import {  IChangeTrustResponse, IIntentResponse, IntentResponseStatus } from "../interfaces/response.interface";
 
 export function changeTrust( type:'add'|'remove', asset_code: string, asset_issuer?: string , limit?: number ):Promise<IChangeTrustResponse>{
@@ -13,13 +13,16 @@ export function changeTrust( type:'add'|'remove', asset_code: string, asset_issu
         }
 
         let confirmWin:any = window.open(
-            `${baseUrl}/intent/change-trust?asset_code=${asset_code}&type=${type}&asset_issuer=${asset_issuer}`,
+            `${baseUrl}/intent/change-trust?asset_code=${asset_code}&type=${type}&asset_issuer=${asset_issuer}&network=${network}`,
             "myWindow",
             `width=${windowConfig.width},height=${windowConfig.height},top=${windowConfig.top},left=${windowConfig.left},scrollbars=no`
         );
         const handleResponse = (response:IIntentResponse) => {            
             if (response.data.status === IntentResponseStatus.submit) {
-                resolve(response.data.data)
+                resolve({
+                    ...response.data.data,
+                    network: network
+                })
                 window.removeEventListener("message", handleResponse);
                 confirmWin.close();
             }
