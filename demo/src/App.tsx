@@ -1,10 +1,18 @@
 import React from 'react';
-import {getAccountBalances, getAccountSetting} from 'kuknos-browser-intent-sdk'
-
+import {changeTrust , payment} from 'kuknos-browser-intent-sdk'
 function App() { 
 
   const test = async ()=>{
-    getAccountSetting("GDKXBS372NZXAOPJIVF3ODCCHKAALOFRMUPXD7FXGY2VXVEXXJF37QYQ")
+    
+    /* console.log(btoa(JSON.stringify({
+      data : 'matin',
+      type : 'warn',
+      location : 'login',
+      userAgent: navigator.userAgent
+    })));
+     */
+    //changeTrust('remove' , 'ABPARS' , "GAKARA32VNSMKCSPMDNQXCOMZSDSBRZCQCAJKDH4A4CLCGOIVL7UNZWS" , 10)
+    changeTrust('add' , 'ABPARS' , "GAKARA32VNSMKCSPMDNQXCOMZSDSBRZCQCAJKDH4A4CLCGOIVL7UNZWS" , 10)
     .then((result) => {
       console.log(result);
       
@@ -13,7 +21,6 @@ function App() {
       
     });
 
-   
   }
 
   return (
