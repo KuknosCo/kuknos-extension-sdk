@@ -38,7 +38,13 @@ export interface ICreateAccountResponse {
 
 export interface IChangeTrustResponse {
 	public: string;
-	signature: string;
+	status: string;
+}
+
+export interface IPaymentResponse {
+	public: string;
+	status: string;
+	transaction_hash: string;
 }
 
 export interface ICurveEncryptResponse {

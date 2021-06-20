@@ -1,8 +1,7 @@
 import { IWindowConfig } from "../interfaces/windowConfig.interface";
 
 //export const baseUrl: string = "https://browser-extension.kuknos.ir";
-export const baseUrl: string = "http://localhost:3001";
-export const kuknos: string = "http://localhost:3001";
+export const baseUrl: string = "http://localhost:3000";
 
 export const horizon  = {
   live : 'https://horizon.kuknos.org',
