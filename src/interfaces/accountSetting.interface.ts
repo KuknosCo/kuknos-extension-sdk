@@ -7,6 +7,7 @@ export interface accountSettingEntry{
 
 export interface accountSettingResponse {
 	public: string;
+	network: string;
 	setting: {
 		thresholds: Horizon.AccountThresholds;
 		flags: Horizon.Flags;

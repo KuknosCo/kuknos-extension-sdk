@@ -8,6 +8,7 @@ export interface paymentEntry{
 
 export interface paymentresponse{
     public: string;
+    network: string;
 	status: string;
 	transaction_hash: string;
 }

@@ -1,5 +1,6 @@
 export interface accountBlancesResponse{
     public: string;
+	network: string;
 	balances: balance[];
 }
 
