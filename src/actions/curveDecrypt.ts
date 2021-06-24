@@ -1,8 +1,9 @@
 import { baseUrl, windowConfig } from "../config/config";
-import {ICurveDecryptResponse, IIntentResponse, IntentResponseStatus } from "../interfaces/response.interface";
+import { curveDecryptResponse } from "../interfaces/curveDecrypt.interface";
+import {IIntentResponse, IntentResponseStatus } from "../interfaces/response.interface";
 
 
-export async function curveDecrypt(ciphertext: string):Promise<ICurveDecryptResponse> {
+export async function curveDecrypt(ciphertext: string):Promise<curveDecryptResponse> {
 	return new Promise((resolve , reject)=>{
         if(!ciphertext){
             reject('data should not be empty')

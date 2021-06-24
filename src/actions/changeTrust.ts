@@ -1,19 +1,20 @@
 import { baseUrl, windowConfig } from "../config/config";
-import {  IChangeTrustResponse, IIntentResponse, IntentResponseStatus } from "../interfaces/response.interface";
+import { changeTrustEntry , changeTrustResponse } from "../interfaces/changeTrust.interface";
+import {  IIntentResponse, IntentResponseStatus } from "../interfaces/response.interface";
 
-export function changeTrust( type:'add'|'remove', asset_code: string, asset_issuer?: string , limit?: number ):Promise<IChangeTrustResponse>{
+export function changeTrust( data:changeTrustEntry ):Promise<changeTrustResponse>{
     return new Promise((resolve , reject)=>{
-        if(!asset_code){
+        if(!data.asset_code){
             reject('Asset code should not be empty');
             return;
         }
-        if(asset_issuer && !limit){
+        if(data.asset_issuer && !data.limit){
             reject('limit should not be empty');
             return;
         }
 
         let confirmWin:any = window.open(
-            `${baseUrl}/intent/change-trust?asset_code=${asset_code}&type=${type}&asset_issuer=${asset_issuer}`,
+            `${baseUrl}/intent/change-trust?asset_code=${data.asset_code}&type=${data.type}&asset_issuer=${data.asset_issuer}`,
             "myWindow",
             `width=${windowConfig.width},height=${windowConfig.height},top=${windowConfig.top},left=${windowConfig.left},scrollbars=no`
         );

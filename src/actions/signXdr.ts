@@ -1,11 +1,11 @@
 import { baseUrl, windowConfig } from "../config/config";
 import {
-	ISignXdrResponse,
 	IIntentResponse,
 	IntentResponseStatus,
 } from "../interfaces/response.interface";
+import { signXdrResponse } from "../interfaces/signXdr.interface";
 
-export async function signXdr(xdr: string): Promise<ISignXdrResponse> {
+export async function signXdr(xdr: string): Promise<signXdrResponse> {
 	return new Promise((resolve, reject) => {
 		if (!xdr) {
 			reject("xdr should not be empty");

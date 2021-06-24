@@ -1,11 +1,11 @@
 import { baseUrl, windowConfig } from "../config/config";
 import {
-	IRecoverAccountResponse,
 	IIntentResponse,
 	IntentResponseStatus,
 } from "../interfaces/response.interface";
+import { signDataResponse } from "../interfaces/signData.interface";
 
-export async function signData(data: string): Promise<IRecoverAccountResponse> {
+export async function signData(data: string): Promise<signDataResponse> {
 	return new Promise((resolve, reject) => {
 		if (!data) {
 			reject("data should not be empty");

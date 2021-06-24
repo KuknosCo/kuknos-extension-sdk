@@ -1,15 +1,8 @@
-import { baseUrl, windowConfig } from "../config/config";
-import {
-	IAccountBalancesResponse,
-	IIntentResponse,
-	IntentResponseStatus,
-} from "../interfaces/response.interface";
 import * as KuknosSdk from "js-kuknos-sdk";
 import { horizon } from "./../config/config";
+import { accountBlancesResponse } from "../interfaces/accountBalances.interface";
 
-export function getAccountBalances(
-	publicKey: string
-): Promise<IAccountBalancesResponse> {
+export function getAccountBalances(publicKey: string): Promise<accountBlancesResponse> {
 	return new Promise(async (resolve, reject) => {
 		if(!publicKey){
             reject('publicKey should not be empty')
@@ -25,7 +18,7 @@ export function getAccountBalances(
 			let balances = account.balances.map((item: any) => {
 				let availableBalance = 0;
 				if (item.asset_type === "native") {
-					availableBalance = calculateAvailablePMN(account);
+					availableBalance = calculateAvailablePMN(account.balances , account.subentry_count);
 				} else {
 					availableBalance =
 						parseFloat(item.balance) - parseFloat(item.selling_liabilities);
@@ -51,7 +44,7 @@ export function getAccountBalances(
 	});
 }
 
-function calculateAvailablePMN({ balances, subentry_count }) {
+function calculateAvailablePMN(balances:any, subentry_count:any) {
 	try {
 		let reserve = 1;
 		reserve += subentry_count * 0.5;
@@ -61,7 +54,7 @@ function calculateAvailablePMN({ balances, subentry_count }) {
 		);
 
 		return (
-			parseFloat(balances.filter((e) => e.asset_type === "native")[0].balance) -
+			parseFloat(balances.filter((e:any) => e.asset_type === "native")[0].balance) -
 			reserve
 		);
 	} catch (error) {

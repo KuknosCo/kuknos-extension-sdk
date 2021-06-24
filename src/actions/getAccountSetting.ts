@@ -1,10 +1,8 @@
-import { IAccountSettingResponse } from "../interfaces/response.interface";
 import * as KuknosSdk from "js-kuknos-sdk";
 import { horizon } from "./../config/config";
+import { accountSettingEntry, accountSettingResponse } from "../interfaces/accountSetting.interface";
 
-export function getAccountSetting(
-	publicKey: string
-): Promise<IAccountSettingResponse> {
+export function getAccountSetting(publicKey: string): Promise<accountSettingResponse> {
 	return new Promise(async (resolve, reject) => {
 		if (!publicKey) {
 			reject("publicKey should not be empty");

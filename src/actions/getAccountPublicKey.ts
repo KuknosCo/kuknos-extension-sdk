@@ -1,7 +1,8 @@
 import { baseUrl, windowConfig } from "../config/config";
-import { IAccountPublicKeyResponse, IIntentResponse, IntentResponseStatus } from "../interfaces/response.interface";
+import { accountPublicKeyResponse } from "../interfaces/accountPublicKey.interface";
+import {IIntentResponse, IntentResponseStatus } from "../interfaces/response.interface";
 
-export function getAccountPublicKey():Promise<IAccountPublicKeyResponse>{
+export function getAccountPublicKey():Promise<accountPublicKeyResponse>{
     return new Promise((resolve , reject)=>{
         let confirmWin:any = window.open(
             `${baseUrl}/intent/account-publickey`,

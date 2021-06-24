@@ -1,7 +1,8 @@
 import { baseUrl, windowConfig } from "../config/config";
-import { ICreateAccountResponse, IIntentResponse, IntentResponseStatus } from "../interfaces/response.interface";
+import { createAccountresponse } from "../interfaces/createAccount.interface";
+import { IIntentResponse, IntentResponseStatus } from "../interfaces/response.interface";
 
-export function createAccount(identifier:string):Promise<ICreateAccountResponse>{
+export function createAccount(identifier: string):Promise<createAccountresponse>{
     return new Promise((resolve , reject)=>{
         if(!identifier){
             reject('Identifier should not be empty')

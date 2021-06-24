@@ -1,11 +1,11 @@
 import { baseUrl, windowConfig } from "../config/config";
+import { recoverAccountResponse } from "../interfaces/recoverAccount";
 import {
-	ISignDataResponse,
 	IIntentResponse,
 	IntentResponseStatus,
 } from "../interfaces/response.interface";
 
-export async function recoverExtenstionAccount(identifier: string): Promise<ISignDataResponse> {
+export async function recoverExtenstionAccount(identifier: string): Promise<recoverAccountResponse> {
 	return new Promise((resolve, reject) => {
 		if (!identifier) {
 			reject("identifier should not be empty");
