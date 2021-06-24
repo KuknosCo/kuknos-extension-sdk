@@ -1,5 +1,5 @@
 import * as KuknosSdk from "js-kuknos-sdk";
-import { horizon } from "./../config/config";
+import { horizon, network } from "./../config/config";
 import { accountBlancesResponse } from "../interfaces/accountBalances.interface";
 
 export function getAccountBalances(publicKey: string): Promise<accountBlancesResponse> {
@@ -9,7 +9,7 @@ export function getAccountBalances(publicKey: string): Promise<accountBlancesRes
             return
         }
 		try {
-			let account = await new KuknosSdk.Server(horizon.live)
+			let account = await new KuknosSdk.Server(horizon)
 				.accounts()
 				.accountId(publicKey)
 				.call()
@@ -37,6 +37,7 @@ export function getAccountBalances(publicKey: string): Promise<accountBlancesRes
 			resolve({
 				public: publicKey,
 				balances: balances,
+				network: network
 			});
 		} catch (error) {
 			reject(error);

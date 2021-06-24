@@ -1,5 +1,5 @@
 import * as KuknosSdk from "js-kuknos-sdk";
-import { horizon } from "./../config/config";
+import { horizon , network } from "./../config/config";
 import { accountSettingEntry, accountSettingResponse } from "../interfaces/accountSetting.interface";
 
 export function getAccountSetting(publicKey: string): Promise<accountSettingResponse> {
@@ -9,7 +9,7 @@ export function getAccountSetting(publicKey: string): Promise<accountSettingResp
 			return;
 		}
 		try {
-			let account = await new KuknosSdk.Server(horizon.live)
+			let account = await new KuknosSdk.Server(horizon)
 				.accounts()
 				.accountId(publicKey)
 				.call()
@@ -17,6 +17,7 @@ export function getAccountSetting(publicKey: string): Promise<accountSettingResp
 
 			resolve({
 				public: publicKey,
+				network: network,
 				setting: {
 					thresholds: account.thresholds,
 					flags: account.flags,

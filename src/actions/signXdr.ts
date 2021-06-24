@@ -1,4 +1,4 @@
-import { baseUrl, windowConfig } from "../config/config";
+import { baseUrl, network, windowConfig } from "../config/config";
 import {
 	IIntentResponse,
 	IntentResponseStatus,
@@ -12,7 +12,7 @@ export async function signXdr(xdr: string): Promise<signXdrResponse> {
 			return;
 		}
 		let confirmWin: any = window.open(
-			`${baseUrl}/intent/sign-xdr?xdr=${encodeURIComponent(xdr)}`,
+			`${baseUrl}/intent/sign-xdr?xdr=${encodeURIComponent(xdr)}&network=${network}`,
 			"myWindow",
 			`width=${windowConfig.width},height=${windowConfig.height},top=${windowConfig.top},left=${windowConfig.left},scrollbars=no`
 		);
@@ -21,6 +21,7 @@ export async function signXdr(xdr: string): Promise<signXdrResponse> {
 				resolve({
 					public: response.data.data.publicKey,
 					xdr: response.data.data.xdr,
+					network: network
 				});
 
 				window.removeEventListener("message", handleResponse);

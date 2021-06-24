@@ -1,11 +1,11 @@
-import { baseUrl, windowConfig } from "../config/config";
+import { baseUrl, windowConfig , network } from "../config/config";
 import { accountPublicKeyResponse } from "../interfaces/accountPublicKey.interface";
 import {IIntentResponse, IntentResponseStatus } from "../interfaces/response.interface";
 
 export function getAccountPublicKey():Promise<accountPublicKeyResponse>{
     return new Promise((resolve , reject)=>{
         let confirmWin:any = window.open(
-            `${baseUrl}/intent/account-publickey`,
+            `${baseUrl}/intent/account-publickey?network=${network}`,
             "myWindow",
             `width=${windowConfig.width},height=${windowConfig.height},top=${windowConfig.top},left=${windowConfig.left},scrollbars=no`
         );
