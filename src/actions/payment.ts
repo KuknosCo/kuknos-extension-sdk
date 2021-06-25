@@ -11,7 +11,7 @@ export function payment(data:paymentEntry):Promise<paymentresponse>{
         }
 
         let confirmWin:any = window.open(
-            `${baseUrl}/intent/payment?asset_code=${data.asset_code}&amount=${data.amount}&asset_issuer=${data.asset_issuer}&destination=${data.destination}&memo=${data.memo}}&network=${network}`,
+            `${baseUrl}/intent/payment?asset_code=${data.asset_code}&amount=${data.amount}&asset_issuer=${data.asset_issuer}&destination=${data.destination}&memo=${data.memo}&network=${network}`,
             "myWindow",
             `width=${windowConfig.width},height=${windowConfig.height},top=${windowConfig.top},left=${windowConfig.left},scrollbars=no`
         );

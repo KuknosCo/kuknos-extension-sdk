@@ -12,10 +12,15 @@ function App() {
     })));
      */
 
-   
+    KuknosIntent.setExtensionUrl('http://localhost:3000')
 
 
-    KuknosIntent.getAccountPublicKey()
+    KuknosIntent.payment({
+      amount: 0.0001,
+      destination: 'GARTVC5KJUEBPXSNDKFXBPK7U5QZJCBEJMWQ66HE7AHFSDYWB6TG5N6C',
+      asset_code: 'PMN',
+      memo: 'matin'
+    })
     .then((result) => {
       console.log(result);
       
