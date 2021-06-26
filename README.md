@@ -1,12 +1,12 @@
 # Kuknos Extension SDK
 
-Kuknos extension is a wallet on Kuknos Network.
+Kuknos extension is a wallet on Kuknos Network build exclusively for internet browsers.
 
-You can use the sdk to do and short some operation without sharing secret key to any third party applications.
+You can use this SDK to do and short some operation without sharing secret key to any third party applications.
 
-You have just install the SDK and use functions. Users of your application has to installed the Kuknos browser extension on their browser.
+You just have to install the SDK and use the appropriate functions. Users of your application have to install the Kuknos browser extension on their browser for interaction with the SDK and your application.
 
-<b>Install Kuknos browser extension with below link:</b>
+<b>Install Kuknos browser extension with below links:</b>
 
 [Firefox Kuknos Extension](https://addons.mozilla.org/en-GB/firefox/addon/kuknos-wallet/)
 
