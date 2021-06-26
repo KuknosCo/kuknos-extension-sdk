@@ -1,13 +1,13 @@
 {
-  "name": "kuknos-browser-intent-sdk",
+  "name": "kuknos-extension-sdk",
   "version": "0.0.1",
   "description": "",
-  "main": "./dist/kuknos-browser-intent-sdk.js",
-  "types": "./dist/kuknos-browser-intent-sdk.d.ts",
+  "main": "./dist/kuknos-extension-sdk.js",
+  "types": "./dist/kuknos-extension-sdk.d.ts",
   "scripts": {
     "dev": "tsc -m es6 --outDir dist",
     "dev:watch": "nodemon --exec 'npm run dev || exit 1'",
-    "build": "npm run dev && uglifyjs ./dist/kuknos-browser-intent-sdk.js -o ./dist/kuknos-browser-intent-sdk.min.js",
+    "build": "npm run dev && uglifyjs ./dist/kuknos-extension-sdk.js -o ./dist/kuknos-extension-sdk.min.js",
     "clean": "rm -rf dist",
     "demo": "cd demo && npm start"
   },
