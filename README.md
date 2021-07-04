@@ -52,4 +52,4 @@ KuknosIntent.payment({
 ```
 
 # Document
-You can find all methods in [Docs](https://docs.kuknos.ir/)
+You can find all methods in [Docs](https://kuknosco.github.io/kuknos-extension-sdk/)
