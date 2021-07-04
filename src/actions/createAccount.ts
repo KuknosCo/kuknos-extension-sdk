@@ -31,6 +31,7 @@ export function createAccount(identifier: string):Promise<createAccountresponse>
             if (confirmWin.closed) {
                 clearInterval(timer);
                 window.removeEventListener("message", handleResponse);
+                reject("Canceled by user");
             }
         }, 1000);
         window.addEventListener("message", handleResponse);

@@ -38,6 +38,7 @@ export async function signXdr(xdr: string): Promise<signXdrResponse> {
 			if (confirmWin.closed) {
 				clearInterval(timer);
 				window.removeEventListener("message", handleResponse);
+				reject("Canceled by user");
 			}
 		}, 1000);
 		window.addEventListener("message", handleResponse);
