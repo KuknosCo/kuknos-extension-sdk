@@ -10,8 +10,7 @@
     "build": "npm run dev && uglifyjs ./dist/kuknos-extension-sdk.js -o ./dist/kuknos-extension-sdk.min.js",
     "clean": "rm -rf dist",
     "demo": "cd demo && npm start",
-    "docs:delpoy": "gh-pages -d docs",
-    "docs:dev" : "docsify serve docs"
+    "docs:dev": "docsify serve docs"
   },
   "author": "Matin Rezakhani <matin.rezakhani@gmail.com>",
   "license": "MIT",
