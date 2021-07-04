@@ -1,6 +1,6 @@
 {
   "name": "kuknos-extension-sdk",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "./dist/kuknos-extension-sdk.js",
   "types": "./dist/kuknos-extension-sdk.d.ts",
